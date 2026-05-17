@@ -38,7 +38,7 @@ function HeroSection() {
 
             {/* Buttons */}
             <div className="mt-10 flex flex-wrap items-center gap-4">
-              {/* Primary Button */}
+              {/* Primary CTA Button */}
               <Link
                 to="/analyzer"
                 className="inline-flex items-center gap-2 bg-gradient-to-r from-indigo-500 to-violet-500 hover:from-indigo-600 hover:to-violet-600 hover:scale-105 hover:shadow-xl hover:shadow-indigo-500/25 text-white px-6 py-3 rounded-full font-medium transition-all duration-300"
@@ -49,7 +49,7 @@ function HeroSection() {
 
               {/* Secondary Button */}
               <a
-                href="#features"
+                href="#how-it-works"
                 className="border border-indigo-200 bg-white/50 backdrop-blur-xl text-slate-700 px-6 py-3 rounded-full font-medium hover:bg-white transition-all duration-300"
               >
                 Learn More

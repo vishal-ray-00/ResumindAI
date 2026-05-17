@@ -26,7 +26,7 @@ function Navbar() {
           <ul className="flex flex-wrap justify-center items-center gap-4 md:gap-10 text-sm text-slate-700 font-medium sm:justify-end">
             <li>
               <a
-                href="#hero"
+                href="/#hero"
                 className="hover:text-black transition-all duration-300"
               >
                 Home
@@ -35,10 +35,18 @@ function Navbar() {
 
             <li>
               <a
-                href="#features"
+                href="/#features"
                 className="hover:text-black transition-all duration-300"
               >
                 Features
+              </a>
+            </li>
+            <li>
+              <a
+                href="/#how-it-works"
+                className="hover:text-black transition-all duration-300"
+              >
+                How It Works
               </a>
             </li>
 

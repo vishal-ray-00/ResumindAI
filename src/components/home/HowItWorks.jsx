@@ -2,7 +2,7 @@ import { Upload, ScanSearch, Sparkles } from "lucide-react";
 
 function HowItWorks() {
   return (
-    <section className="w-full py-24 relative overflow-hidden">
+    <section id="how-it-works" className="w-full py-24 relative overflow-hidden">
       {/* Background Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-indigo-400/10 rounded-full blur-[120px]"></div>
 
