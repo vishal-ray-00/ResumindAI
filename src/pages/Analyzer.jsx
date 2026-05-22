@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { FiUploadCloud } from "react-icons/fi";
 import { MdOutlineCancel } from "react-icons/md";
 import { ImSpinner8 } from "react-icons/im";
+import extractTextFromPDF from "../utils/extractTextFromPDF";
+import analyzeResume from "../utils/analyzeResume";
 
 function Analyzer() {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -69,12 +71,22 @@ function Analyzer() {
     }
   };
 
-  const handleAnalyze = () => {
-    setIsAnalyzing(true);
+  const handleAnalyze = async () => {
+    try {
+      setIsAnalyzing(true);
 
-    setTimeout(() => {
-      navigate("/results");
-    }, 3000);
+      const extractedText = await extractTextFromPDF(selectedFile);
+
+      const analysisData = await analyzeResume(extractedText);
+
+      navigate("/results", {
+        state: analysisData,
+      });
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsAnalyzing(false);
+    }
   };
 
   return isAnalyzing ? (
@@ -129,7 +141,7 @@ function Analyzer() {
         </div>
 
         {/* Upload Card */}
-        <div className="mt-20 bg-white/40 backdrop-blur-2xl border border-white/30 rounded-[2rem] p-8 sm:p-12 shadow-2xl shadow-indigo-500/10">
+        <div id="upload-card" className="mt-20 bg-white/40 backdrop-blur-2xl border border-white/30 rounded-[2rem] p-8 sm:p-12 shadow-2xl shadow-indigo-500/10">
           {/* Upload Area */}
           <div
             onDragOver={handleDragOver}
@@ -203,7 +215,8 @@ function Analyzer() {
                 </div>
                 {/* Remove Button */}
                 <button
-                  onClick={() => {setSelectedFile(null);
+                  onClick={() => {
+                    setSelectedFile(null);
                     fileInputRef.current.value = "";
                   }}
                   className="text-slate-400 hover:text-red-500 transition-all duration-300 cursor-pointer"

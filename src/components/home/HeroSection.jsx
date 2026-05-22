@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaFileUpload } from "react-icons/fa";
+import DashboardPreview from "../../assets/DashboardPreview1.png";
 
 function HeroSection() {
   return (
@@ -65,9 +66,19 @@ function HeroSection() {
           {/* Right Side Placeholder */}
           <div className="w-full max-w-xl">
             <div className="bg-white/40 backdrop-blur-2xl border border-white/30 rounded-3xl p-10 min-h-[320px] flex items-center justify-center shadow-2xl shadow-indigo-500/10">
-              <p className="text-slate-500 text-lg">
-                Dashboard Preview Coming Soon
-              </p>
+              <div className="text-slate-500 text-lg">
+                <div className="relative mt-14">
+                  <div className="absolute inset-0 bg-indigo-500/20 blur-3xl rounded-[3rem]"></div>
+
+                  <div className="relative bg-white/40 backdrop-blur-2xl border border-white/30 rounded-[2rem] p-3 shadow-2xl shadow-indigo-500/10">
+                    <img
+                      src={DashboardPreview}
+                      alt="Dashboard Preview"
+                      className="w-full rounded-[1.5rem]"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
