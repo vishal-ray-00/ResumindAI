@@ -24,25 +24,17 @@ const analyzeResume = async (resumeText) => {
           {
             role: "user",
 
-            content: `
-
-Analyze this resume and return ONLY valid JSON.
-
-Return format:
-
-{
-  "score": number,
-  "summary": "string",
-  "strengths": ["string"],
-  "missingKeywords": ["string"],
-  "suggestions": ["string"],
-  "improvements": ["string"]
-}
-
-Resume:
-${resumeText}
-
-`,
+            content: `Analyze this resume and return ONLY valid JSON.
+                      Return format:
+                      {
+                        "score": number,
+                        "summary": "string",
+                        "strengths": ["string"],
+                        "missingKeywords": ["string"],
+                        "suggestions": ["string"],
+                        "improvements": ["string"]
+                      }
+                      Resume:${resumeText}`,
           },
         ],
       }),

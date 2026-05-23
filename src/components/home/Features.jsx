@@ -5,7 +5,7 @@ function Features() {
     <>
       <section
         id="features"
-        className="relative z-10 max-w-7xl mx-auto px-6 pt-20"
+        className="relative z-10 mx-auto w-full max-w-5xl px-4 sm:max-w-7xl sm:px-6 pt-20"
       >
         {/* Background Glow */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[150px] h-[150px] bg-indigo-400/10 rounded-full blur-[120px]"></div>

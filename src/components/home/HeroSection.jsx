@@ -6,7 +6,7 @@ import DashboardPreview from "../../assets/DashboardPreview1.png";
 function HeroSection() {
   return (
     <>
-      <section id="hero" className="relative w-full  min-h-screen pt-24">
+      <section id="hero" className="relative w-full min-h-screen pt-24">
         {/* Background Glow Effects */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-indigo-500/10 rounded-full blur-[120px]"></div>
 
@@ -17,7 +17,7 @@ function HeroSection() {
         {/* Hero Content */}
         <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 py-10 flex flex-col lg:flex-row items-center justify-between gap-20">
           {/* Left Side */}
-          <div className="w-full max-w-2xl">
+          <div className="w-full lg:flex-1">
             {/* Small Label */}
             <p className="text-indigo-500 font-medium mb-4">
               ✨ AI-Powered Resume Optimization
@@ -64,7 +64,7 @@ function HeroSection() {
           </div>
 
           {/* Right Side Placeholder */}
-          <div className="w-full max-w-xl">
+          <div className="w-full lg:flex-1">
             <div className="bg-white/40 backdrop-blur-2xl border border-white/30 rounded-3xl p-10 min-h-[320px] flex items-center justify-center shadow-2xl shadow-indigo-500/10">
               <div className="text-slate-500 text-lg">
                 <div className="relative mt-14">
