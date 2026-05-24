@@ -4,99 +4,96 @@ function HowItWorks() {
   return (
     <section
       id="how-it-works"
-      className="w-full py-24 relative overflow-hidden"
+      className="relative isolate overflow-hidden py-28"
     >
-      {/* Background Glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-indigo-400/10 rounded-full blur-[120px]"></div>
+      {/* Background */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(10,15,28,0.98),rgba(1,4,10,1)_58%,rgba(0,0,0,1)_100%)]" />
 
-      {/* Container */}
-      <div className="relative z-10 mx-auto w-full max-w-5xl px-4 sm:max-w-7xl sm:px-6">
-        {/* Section Heading */}
-        <div className="text-center max-w-3xl mx-auto">
-          <p className="text-indigo-500 font-medium mb-4">Simple Process</p>
+      {/* Grid Overlay */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(163,255,18,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(163,255,18,0.02)_1px,transparent_1px)] bg-[size:56px_56px] opacity-40" />
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 leading-tight tracking-tight">
+      {/* Top Border Glow */}
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#A3FF12]/30 to-transparent" />
+
+      {/* Content */}
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6">
+        {/* Heading */}
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="mb-4 font-medium text-[#A3FF12]">Simple Process</p>
+
+          <h2 className="text-4xl font-bold leading-tight tracking-tight text-white md:text-5xl">
             How ResumindAI
-            <span className="block bg-gradient-to-r from-indigo-500 to-violet-500 bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-[#A3FF12] to-[#7DEBFF] bg-clip-text text-transparent">
               Works
             </span>
           </h2>
 
-          <p className="mt-6 text-lg text-slate-600 leading-8">
+          <p className="mt-6 text-lg leading-8 text-slate-300">
             Improve your resume in just a few simple steps using AI-powered
             analysis and recommendations.
           </p>
         </div>
 
         {/* Steps */}
-        <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="relative mt-24 grid grid-cols-1 gap-8 md:grid-cols-3">
+          {/* Line */}
+          <div className="absolute left-0 right-0 top-16 hidden h-px bg-gradient-to-r from-transparent via-[#A3FF12]/20 to-transparent md:block" />
+
           {/* Step 1 */}
-          <div className="relative bg-white/40 backdrop-blur-2xl border border-white/30 rounded-3xl p-8 shadow-xl shadow-indigo-500/5 hover:-translate-y-2 transition-all duration-300">
-            {/* Step Number */}
-            <div className="absolute top-6 right-6 text-5xl font-bold text-indigo-100">
+          <div className="group relative rounded-[30px] border border-white/10 bg-white/[0.03] p-8 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-[#A3FF12]/30">
+            <div className="absolute right-6 top-5 text-6xl font-black text-white/[0.04]">
               01
             </div>
 
-            {/* Icon */}
-            <div className="w-16 h-16 rounded-2xl bg-gradient-to-r from-indigo-500 to-violet-500 flex items-center justify-center text-white shadow-lg shadow-indigo-500/20">
+            <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-r from-[#A3FF12] to-[#7DEBFF] text-black">
               <Upload size={30} />
             </div>
 
-            {/* Title */}
-            <h3 className="mt-8 text-2xl font-semibold text-slate-900">
+            <h3 className="mt-8 text-2xl font-semibold text-white">
               Upload Resume
             </h3>
 
-            {/* Description */}
-            <p className="mt-4 text-slate-600 leading-7">
+            <p className="mt-4 leading-7 text-slate-300">
               Upload your existing resume securely in PDF format and let the AI
               begin analysis.
             </p>
           </div>
 
           {/* Step 2 */}
-          <div className="relative bg-white/40 backdrop-blur-2xl border border-white/30 rounded-3xl p-8 shadow-xl shadow-indigo-500/5 hover:-translate-y-2 transition-all duration-300">
-            {/* Step Number */}
-            <div className="absolute top-6 right-6 text-5xl font-bold text-indigo-100">
+          <div className="group relative rounded-[30px] border border-white/10 bg-white/[0.03] p-8 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-[#A3FF12]/30">
+            <div className="absolute right-6 top-5 text-6xl font-black text-white/[0.04]">
               02
             </div>
 
-            {/* Icon */}
-            <div className="w-16 h-16 rounded-2xl bg-gradient-to-r from-indigo-500 to-violet-500 flex items-center justify-center text-white shadow-lg shadow-indigo-500/20">
+            <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-r from-[#A3FF12] to-[#7DEBFF] text-black">
               <ScanSearch size={30} />
             </div>
 
-            {/* Title */}
-            <h3 className="mt-8 text-2xl font-semibold text-slate-900">
+            <h3 className="mt-8 text-2xl font-semibold text-white">
               AI Analysis
             </h3>
 
-            {/* Description */}
-            <p className="mt-4 text-slate-600 leading-7">
+            <p className="mt-4 leading-7 text-slate-300">
               Our AI scans your resume for ATS compatibility, missing keywords,
               and formatting issues.
             </p>
           </div>
 
           {/* Step 3 */}
-          <div className="relative bg-white/40 backdrop-blur-2xl border border-white/30 rounded-3xl p-8 shadow-xl shadow-indigo-500/5 hover:-translate-y-2 transition-all duration-300">
-            {/* Step Number */}
-            <div className="absolute top-6 right-6 text-5xl font-bold text-indigo-100">
+          <div className="group relative rounded-[30px] border border-white/10 bg-white/[0.03] p-8 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-[#A3FF12]/30">
+            <div className="absolute right-6 top-5 text-6xl font-black text-white/[0.04]">
               03
             </div>
 
-            {/* Icon */}
-            <div className="w-16 h-16 rounded-2xl bg-gradient-to-r from-indigo-500 to-violet-500 flex items-center justify-center text-white shadow-lg shadow-indigo-500/20">
+            <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-r from-[#A3FF12] to-[#7DEBFF] text-black">
               <Sparkles size={30} />
             </div>
 
-            {/* Title */}
-            <h3 className="mt-8 text-2xl font-semibold text-slate-900">
+            <h3 className="mt-8 text-2xl font-semibold text-white">
               Get Insights
             </h3>
 
-            {/* Description */}
-            <p className="mt-4 text-slate-600 leading-7">
+            <p className="mt-4 leading-7 text-slate-300">
               Receive smart recommendations and actionable insights to improve
               your resume instantly.
             </p>

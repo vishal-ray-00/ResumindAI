@@ -1,50 +1,50 @@
 import { Link } from "react-router-dom";
 import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
-import ResumindLogo from "../../assets/Resumind Logo.png";
+import ResumindLogo from "../../assets/ResumindLogo.svg";
 
 function Footer() {
   return (
-    <footer className="w-full py-16 relative overflow-hidden">
+    <footer className="relative isolate overflow-hidden py-20">
+      {/* Background */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(6,6,6,0.98),rgba(0,0,0,1)_60%,rgba(0,0,0,1)_100%)]" />
+
+      {/* Subtle Grid */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(163,255,18,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(163,255,18,0.015)_1px,transparent_1px)] bg-[size:56px_56px] opacity-30" />
+
       {/* Top Border */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[90%] h-px bg-gradient-to-r from-transparent via-indigo-200 to-transparent"></div>
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#A3FF12]/20 to-transparent" />
 
-      {/* Background Glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-indigo-400/10 blur-[120px] rounded-full"></div>
-
-      {/* Container */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
-        {/* Main Footer Content */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-10">
-          {/* Logo + Description */}
+      {/* Content */}
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6">
+        <div className="flex flex-col items-center justify-between gap-12 md:flex-row">
+          {/* Left */}
           <div className="max-w-sm text-center md:text-left">
-            {/* Logo */}
-            <div className="flex items-center justify-center md:justify-start gap-3">
+            <div className="flex items-center justify-center gap-3 md:justify-start">
               <img
                 src={ResumindLogo}
                 alt="ResumindAI Logo"
                 className="h-10 w-10 object-contain"
               />
 
-              <h2 className="text-2xl font-bold bg-gradient-to-r from-slate-900 to-indigo-500 bg-clip-text text-transparent tracking-tight">
+              <h2 className="bg-gradient-to-r from-white to-[#84cc16] bg-clip-text text-2xl font-bold tracking-tight text-transparent">
                 ResumindAI
               </h2>
             </div>
 
-            {/* Description */}
-            <p className="mt-5 text-slate-600 leading-7">
+            <p className="mt-5 leading-7 text-slate-500">
               AI-powered resume analysis platform designed to help you optimize
               your resume and improve your chances of getting hired.
             </p>
           </div>
 
-          {/* Navigation */}
-          <div className="flex flex-col items-center md:items-end gap-6">
-            {/* Links */}
-            <ul className="flex items-center gap-8 text-slate-700 font-medium">
+          {/* Right */}
+          <div className="flex flex-col items-center gap-8 md:items-end">
+            {/* Navigation */}
+            <ul className="flex flex-wrap items-center justify-center gap-8 text-sm font-medium text-slate-400">
               <li>
                 <a
                   href="#hero"
-                  className="hover:text-indigo-500 transition-all duration-300"
+                  className="transition-all duration-300 hover:text-[#A3FF12]"
                 >
                   Home
                 </a>
@@ -53,7 +53,7 @@ function Footer() {
               <li>
                 <a
                   href="#features"
-                  className="hover:text-indigo-500 transition-all duration-300"
+                  className="transition-all duration-300 hover:text-[#A3FF12]"
                 >
                   Features
                 </a>
@@ -62,41 +62,47 @@ function Footer() {
               <li>
                 <Link
                   to="/analyzer"
-                  className="hover:text-indigo-500 transition-all duration-300"
+                  className="transition-all duration-300 hover:text-[#A3FF12]"
                 >
                   Analyze
                 </Link>
               </li>
             </ul>
 
-            {/* Social Icons */}
-            <div className="flex items-center gap-5">
+            {/* Social Links */}
+            <div className="flex items-center gap-4">
               <a
                 href="https://github.com/vishal-ray-00"
-                className="w-11 h-11 rounded-full bg-white/50 backdrop-blur-xl border border-white/30 flex items-center justify-center text-slate-700 hover:text-indigo-500 hover:-translate-y-1 transition-all duration-300 shadow-lg shadow-indigo-500/5"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-white/5 bg-black/40 text-slate-400 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-[#A3FF12]/20 hover:text-[#A3FF12]"
               >
-                <FaGithub size={20} />
+                <FaGithub size={18} />
               </a>
 
               <a
                 href="https://www.linkedin.com/in/vishal-ray-864564322/"
-                className="w-11 h-11 rounded-full bg-white/50 backdrop-blur-xl border border-white/30 flex items-center justify-center text-slate-700 hover:text-indigo-500 hover:-translate-y-1 transition-all duration-300 shadow-lg shadow-indigo-500/5"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-white/5 bg-black/40 text-slate-400 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-[#A3FF12]/20 hover:text-[#A3FF12]"
               >
-                <FaLinkedin size={20} />
+                <FaLinkedin size={18} />
               </a>
 
               <a
                 href="https://x.com/vishalray09"
-                className="w-11 h-11 rounded-full bg-white/50 backdrop-blur-xl border border-white/30 flex items-center justify-center text-slate-700 hover:text-indigo-500 hover:-translate-y-1 transition-all duration-300 shadow-lg shadow-indigo-500/5"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-white/5 bg-black/40 text-slate-400 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-[#A3FF12]/20 hover:text-[#A3FF12]"
               >
-                <FaXTwitter size={20} />
+                <FaXTwitter size={18} />
               </a>
             </div>
           </div>
         </div>
 
-        {/* Bottom Footer */}
-        <div className="mt-14 pt-8 border-t border-white/30 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-500">
+        {/* Bottom */}
+        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/5 pt-8 text-sm text-slate-600 sm:flex-row">
           <p>© 2026 ResumindAI. All rights reserved.</p>
 
           <p>Built by Vishal Ray with React & Tailwind CSS</p>

@@ -12,185 +12,240 @@ import {
 function Results() {
   const location = useLocation();
   const analysisData = location.state;
-  
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
   return (
-    <section className="relative w-full min-h-screen overflow-hidden pt-28 pb-16">
-      {/* Background Glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[650px] h-[650px] bg-indigo-500/10 rounded-full blur-[120px]"></div>
+    <section className="relative isolate min-h-screen overflow-hidden pt-28 pb-20">
+      {/* Background */}
+      <div className="absolute inset-0 bg-[#020202]" />
 
-      <div className="absolute bottom-0 right-0 w-[350px] h-[350px] bg-violet-400/10 rounded-full blur-[120px]"></div>
+      {/* Soft Gradient */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(163,255,18,0.04),transparent_28%)]" />
 
-      {/* Main Container */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
-        {/* Top Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {/* ATS Score Card */}
-          <div
-            className={`rounded-[2rem] p-6 md:p-8 text-white shadow-2xl shadow-green-500/20"
-            ${
-              analysisData.score >= 80
-                ? "bg-gradient-to-br from-green-400 to-emerald-500 shadow-green-500/20"
-                : analysisData.score >= 60
-                  ? "bg-gradient-to-br from-yellow-400 to-orange-500 shadow-yellow-500/20"
-                  : "bg-gradient-to-br from-red-400 to-rose-500 shadow-red-500/20"
-            }`}
-          >
-            <p className="text-white/80 text-sm font-medium">
-              ATS Compatibility Score
-            </p>
+      {/* Grid */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:52px_52px] opacity-20" />
 
-            <div className="mt-4 flex items-end gap-3">
-              <h2 className="text-5xl md:text-6xl font-bold">
-                {analysisData.score}
-              </h2>
+      {/* Content */}
+      <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6">
+        {/* TOP GRID */}
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+          {/* ATS SCORE */}
+          <div className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#060913] transition-all duration-300 hover:border-[#A3FF12]/20">
+            {/* Top Gradient Border */}
+            <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-[#A3FF12] via-[#84cc16] to-[#67e8f9]" />
 
-              <span className="text-2xl font-semibold mb-1">/100</span>
-            </div>
+            {/* Inner */}
+            <div className="p-7">
+              <p className="text-sm font-medium text-slate-500">
+                ATS Compatibility Score
+              </p>
 
-            <p className="mt-5 text-sm md:text-base text-white/90 leading-7">
-              {analysisData.score >= 80
-                ? "Excellent ATS compatibility. Your resume is highly optimized for recruiters."
-                : analysisData.score >= 60
-                  ? "Good ATS score, but there are still improvements that can increase interview chances."
-                  : "Your resume needs significant optimization to improve ATS performance."}
-            </p>
-          </div>
+              <div className="mt-5 flex items-end gap-2">
+                <h2
+                  className={`text-6xl font-black tracking-tight
+                ${
+                  analysisData.score >= 80
+                    ? "text-[#A3FF12]"
+                    : analysisData.score >= 60
+                      ? "text-yellow-400"
+                      : "text-red-400"
+                }
+              `}
+                >
+                  {analysisData.score}
+                </h2>
 
-          {/* Resume Summary */}
-          <div className="bg-white/40 backdrop-blur-2xl border border-white/30 rounded-[2rem] p-6 md:p-8 shadow-2xl shadow-indigo-500/10">
-            <div className="flex items-center gap-3">
-              <div className="w-11 h-11 rounded-2xl bg-indigo-100 flex items-center justify-center text-indigo-500">
-                <Sparkles size={20} />
+                <span className="mb-2 text-3xl font-semibold text-slate-600">
+                  /100
+                </span>
               </div>
 
-              <h3 className="text-xl font-semibold text-slate-900">
-                AI Summary
-              </h3>
+              <p className="mt-7 max-w-lg text-base leading-9 text-slate-400">
+                {analysisData.score >= 80
+                  ? "Excellent ATS compatibility. Your resume is highly optimized for recruiters."
+                  : analysisData.score >= 60
+                    ? "Good ATS score, but there are still improvements that can increase interview chances."
+                    : "Your resume needs significant optimization to improve ATS performance."}
+              </p>
             </div>
 
-            <p className="mt-5 text-sm md:text-base text-slate-600 leading-7">
-              {analysisData.summary}
-            </p>
+          </div>
+
+          {/* AI SUMMARY */}
+          <div className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#060913] transition-all duration-300 hover:border-[#A3FF12]/20">
+            {/* Top Border */}
+            <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-[#a78bfa] via-[#67e8f9] to-[#A3FF12]" />
+
+            {/* Inner */}
+            <div className="p-7">
+              {/* Header */}
+              <div className="flex items-center gap-4">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#A3FF12]/10 text-[#A3FF12]">
+                  <Sparkles size={24} />
+                </div>
+
+                <h3 className="text-3xl font-bold tracking-tight text-white">
+                  AI Summary
+                </h3>
+              </div>
+
+              {/* Text */}
+              <div className="mt-8">
+                <p className="text-base leading-10 text-slate-400">
+                  {analysisData.summary}
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Dashboard Grid */}
-        <div className="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {/* LEFT COLUMN */}
+        {/* DASHBOARD */}
+        <div className="mt-6 grid grid-cols-1 gap-6 xl:grid-cols-2">
+          {/* LEFT */}
           <div className="space-y-6">
             {/* Strengths */}
-            <div className="bg-white/40 backdrop-blur-2xl border border-white/30 rounded-[2rem] p-6 md:p-8 shadow-xl shadow-green-500/5">
-              <div className="flex items-center gap-3">
-                <div className="w-11 h-11 rounded-2xl bg-green-100 flex items-center justify-center text-green-600">
-                  <BadgeCheck size={20} />
+            <div className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#060913] transition-all duration-300 hover:border-[#A3FF12]/20">
+              <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-[#A3FF12] to-transparent" />
+
+              <div className="p-7">
+                {/* Header */}
+                <div className="flex items-center gap-4">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#A3FF12]/10 text-[#A3FF12]">
+                    <BadgeCheck size={24} />
+                  </div>
+
+                  <h3 className="text-3xl font-bold tracking-tight text-white">
+                    Resume Strengths
+                  </h3>
                 </div>
 
-                <h3 className="text-xl font-semibold text-slate-900">
-                  Resume Strengths
-                </h3>
-              </div>
+                {/* List */}
+                <div className="mt-8 space-y-4">
+                  {analysisData.strengths.map((strength, index) => (
+                    <div
+                      key={index}
+                      className="flex items-start gap-4 rounded-2xl border border-white/5 bg-[#0b0f1a] p-5"
+                    >
+                      <CheckCircle size={18} className="mt-1 text-[#A3FF12]" />
 
-              <div className="mt-6 space-y-4">
-                {analysisData.strengths.map((strength, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <CheckCircle size={18} className="text-green-500 mt-1" />
-
-                    <p className="text-sm md:text-base text-slate-600">
-                      {strength}
-                    </p>
-                  </div>
-                ))}
+                      <p className="text-sm leading-8 text-slate-400">
+                        {strength}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
-            {/* Missing Keywords */}
-            <div className="bg-white/40 backdrop-blur-2xl border border-white/30 rounded-[2rem] p-6 md:p-8 shadow-xl shadow-yellow-500/5">
-              <div className="flex items-center gap-3">
-                <div className="w-11 h-11 rounded-2xl bg-yellow-100 flex items-center justify-center text-yellow-600">
-                  <TriangleAlert size={20} />
+            {/* Keywords */}
+            <div className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#060913] transition-all duration-300 hover:border-yellow-400/20">
+              <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-yellow-400 to-transparent" />
+
+              <div className="p-7">
+                {/* Header */}
+                <div className="flex items-center gap-4">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-yellow-500/10 text-yellow-400">
+                    <TriangleAlert size={24} />
+                  </div>
+
+                  <h3 className="text-3xl font-bold tracking-tight text-white">
+                    Missing Keywords
+                  </h3>
                 </div>
 
-                <h3 className="text-xl font-semibold text-slate-900">
-                  Missing Keywords
-                </h3>
-              </div>
-
-              <div className="mt-6 flex flex-wrap gap-3">
-                {analysisData.missingKeywords.map((keyword, index) => (
-                  <span
-                    key={index}
-                    className="px-4 py-2 rounded-full bg-yellow-100 text-yellow-700 text-sm font-medium"
-                  >
-                    {keyword}
-                  </span>
-                ))}
+                {/* Tags */}
+                <div className="mt-8 flex flex-wrap gap-3">
+                  {analysisData.missingKeywords.map((keyword, index) => (
+                    <span
+                      key={index}
+                      className="rounded-full border border-yellow-500/10 bg-yellow-500/10 px-4 py-2 text-xs font-semibold text-yellow-300"
+                    >
+                      {keyword}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
 
-          {/* RIGHT COLUMN */}
+          {/* RIGHT */}
           <div className="space-y-6">
-            {/* AI Suggestions */}
-            {/* AI Suggestions */}
-            <div className="bg-white/40 backdrop-blur-2xl border border-white/30 rounded-[2rem] p-6 md:p-8 shadow-xl shadow-indigo-500/5">
-              <div className="flex items-center gap-3">
-                <div className="w-11 h-11 rounded-2xl bg-indigo-100 flex items-center justify-center text-indigo-600">
-                  <Sparkles size={20} />
+            {/* Suggestions */}
+            <div className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#060913] transition-all duration-300 hover:border-[#A3FF12]/20">
+              <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-[#A3FF12] to-transparent" />
+
+              <div className="p-7">
+                {/* Header */}
+                <div className="flex items-center gap-4">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#A3FF12]/10 text-[#A3FF12]">
+                    <Sparkles size={24} />
+                  </div>
+
+                  <h3 className="text-3xl font-bold tracking-tight text-white">
+                    AI Suggestions
+                  </h3>
                 </div>
 
-                <h3 className="text-xl font-semibold text-slate-900">
-                  AI Suggestions
-                </h3>
-              </div>
-
-              <div className="mt-6 space-y-4">
-                {analysisData.suggestions.map((suggestion, index) => (
-                  <div
-                    key={index}
-                    className="bg-indigo-50 border border-indigo-100 rounded-2xl p-4 text-sm md:text-base text-slate-600"
-                  >
-                    {suggestion}
-                  </div>
-                ))}
+                {/* Suggestions */}
+                <div className="mt-8 space-y-4">
+                  {analysisData.suggestions.map((suggestion, index) => (
+                    <div
+                      key={index}
+                      className="rounded-2xl border border-white/5 bg-[#0b0f1a] p-5"
+                    >
+                      <p className="text-sm leading-8 text-slate-400">
+                        {suggestion}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
-            {/* Improvement Areas */}
-            <div className="bg-white/40 backdrop-blur-2xl border border-white/30 rounded-[2rem] p-6 md:p-8 shadow-xl shadow-red-500/5">
-              <div className="flex items-center gap-3">
-                <div className="w-11 h-11 rounded-2xl bg-red-100 flex items-center justify-center text-red-500">
-                  <TriangleAlert size={20} />
+            {/* Improvements */}
+            <div className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#060913] transition-all duration-300 hover:border-red-400/20">
+              <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-red-400 to-transparent" />
+
+              <div className="p-7">
+                {/* Header */}
+                <div className="flex items-center gap-4">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-red-500/10 text-red-400">
+                    <TriangleAlert size={24} />
+                  </div>
+
+                  <h3 className="text-3xl font-bold tracking-tight text-white">
+                    Improvement Areas
+                  </h3>
                 </div>
 
-                <h3 className="text-xl font-semibold text-slate-900">
-                  Improvement Areas
-                </h3>
-              </div>
+                {/* Content */}
+                <div className="mt-8 space-y-4">
+                  {analysisData.improvements.map((improvement, index) => (
+                    <div
+                      key={index}
+                      className="flex items-start gap-4 rounded-2xl border border-white/5 bg-[#0b0f1a] p-5"
+                    >
+                      <TriangleAlert size={18} className="mt-1 text-red-400" />
 
-              <div className="mt-6 space-y-4">
-                {analysisData.improvements.map((improvement, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <TriangleAlert size={18} className="text-red-500 mt-1" />
-
-                    <p className="text-sm md:text-base text-slate-600">
-                      {improvement}
-                    </p>
-                  </div>
-                ))}
+                      <p className="text-sm leading-8 text-slate-400">
+                        {improvement}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom Buttons */}
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+        {/* Button */}
+        <div className="mt-10 flex items-center justify-center">
           <Link
             to="/analyzer"
-            className="flex items-center gap-2 bg-gradient-to-r from-indigo-500 to-violet-500 hover:from-indigo-600 hover:to-violet-600 text-white px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/25"
+            className="inline-flex items-center gap-2 rounded-full bg-[#A3FF12] px-7 py-3 text-sm font-bold text-black transition-all duration-300 hover:bg-[#B7FF42]"
           >
             <Upload size={18} />
             Upload Another Resume
