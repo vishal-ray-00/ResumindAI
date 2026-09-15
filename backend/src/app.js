@@ -6,7 +6,7 @@ import {uploadErrorHandler} from './middlewares/error.middleware.js';
 const app = express();
 
 app.use(cors({
-    origin: "https://resumindaiapp.vercel.app/",
+    origin: "https://resumindaiapp.vercel.app",
 }));
 
 app.use(express.json());
