@@ -53,7 +53,7 @@ function HeroSection() {
 
         <div className="mt-8 flex flex-wrap justify-center gap-3 text-sm text-[#A3FF12]">
           <span className="rounded-full border border-[#A3FF12] bg-black/40 px-3 py-1.5 backdrop-blur-xl">
-            No signup required
+            Secure & Private
           </span>
           <span className="rounded-full border border-[#A3FF12] bg-black/40 px-3 py-1.5 backdrop-blur-xl">
             Instant AI feedback
